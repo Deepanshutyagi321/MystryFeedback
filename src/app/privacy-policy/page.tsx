@@ -1,8 +1,13 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+
 export default function PrivacyPolicy() {
   return (
     <>  
+    <div className="  bg-gray-800">
+      <Button className="ml-20 mt-4" onClick={() => window.history.back()}>Go Back</Button>
+    </div>
       <main className="flex-grow flex flex-col items-center justify-center px-4 md:px-24 py-12 bg-gray-800 text-white">
         <section className="text-center mb-8 md:mb-12">
           <h1 className="text-3xl md:text-5xl font-bold">
