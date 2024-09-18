@@ -50,10 +50,37 @@ export default function Home() {
     </Carousel>
    
    </main>
-   <footer className="text-center p-4 md:p-6 bg-gray-900 text-white">
-        © 2023 True Mystryfeedback. All rights reserved. <br/>Made by Deepanshu Tyagi
-        
-      </footer>
+   <footer className="bg-gray-900 text-white p-4 md:p-6">
+  <div className="container mx-auto flex flex-col md:flex-row items-center justify-between">
+    <div className="text-center md:text-left mb-4 md:mb-0">
+      <p>© 2023 True MysteryFeedback. All rights reserved.</p>
+      <p>Made by Deepanshu Tyagi</p>
+    </div>
+
+    <div className="text-center space-x-4">
+      <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+        <li>
+          <a 
+            href="/privacy-policy" 
+           
+          >
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a 
+            href="/terms-&-conditons" 
+            
+          >
+            Terms and Conditions
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+
    </>
 
   )

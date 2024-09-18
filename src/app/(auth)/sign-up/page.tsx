@@ -22,6 +22,7 @@ import axios, { AxiosError } from 'axios';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { signUpSchemaValidation } from '@/schemas/signUpSchema';
+import { signIn } from 'next-auth/react';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');
@@ -173,6 +174,15 @@ export default function SignUpForm() {
             </Button>
           </form>
         </Form>
+        <div className="my-4 flex items-center justify-center">
+          <Button
+            variant="outline"
+            className="w-full"
+            onClick={() => signIn('google')}
+          >
+            Sign in with Google
+          </Button>
+        </div>
         <div className="text-center mt-4">
           <p>
             Already a member?{' '}
