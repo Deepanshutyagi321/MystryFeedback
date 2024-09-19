@@ -174,7 +174,7 @@ export default function SignUpForm() {
             </Button>
           </form>
         </Form>
-        <div className="my-4 flex items-center justify-center">
+        {/* <div className="my-4 flex items-center justify-center">
           <Button
             variant="outline"
             className="w-full"
@@ -182,7 +182,7 @@ export default function SignUpForm() {
           >
             Sign in with Google
           </Button>
-        </div>
+        </div> */}
         <div className="text-center mt-4">
           <p>
             Already a member?{' '}
