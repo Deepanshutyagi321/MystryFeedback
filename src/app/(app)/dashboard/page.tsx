@@ -2,6 +2,7 @@
 
 
 import MessageCard from '@/components/messageCard';
+import { SkeletonCard } from '@/components/skeleton';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Switch } from '@/components/ui/switch';
@@ -124,7 +125,7 @@ function UserDashboard() {
 
  // Avoid mismatches by handling loading state
  if (status === 'loading') {
-  return <div>Loading...</div>;
+  return <div><SkeletonCard className="w-[100px] h-[20px] rounded-full ml-45px mt-20px" /></div>;
 }
 
 if (!session || !session.user) {
@@ -144,7 +145,11 @@ if (!session || !session.user) {
     });
   };
 
+  
+ 
+
   return (
+   
     <div className="my-8 mx-4 md:mx-8 lg:mx-auto p-6 bg-white rounded w-full max-w-6xl">
       <h1 className="text-4xl font-bold mb-4">User Dashboard</h1>
 
@@ -188,7 +193,9 @@ if (!session || !session.user) {
           <RefreshCcw className="h-4 w-4" />
         )}
       </Button>
-      <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        isLoading ? <SkeletonCard className="w-[100px] h-[20px] rounded-full" />
+        : <div className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
         {messages.length > 0 ? (
           messages.map((message, index) => (
             <MessageCard
@@ -201,6 +208,8 @@ if (!session || !session.user) {
           <p>No messages to display.</p>
         )}
       </div>
+      }
+      
     </div>
   );
 }
