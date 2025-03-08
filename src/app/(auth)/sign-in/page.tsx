@@ -50,12 +50,14 @@ export default function SignUpForm() {
           description: "enter valid credentials",
           variant: 'destructive',
         });
+        return;
       }
       
       toast({
         title: 'Success',
         description: "Sign in successful",
       });
+      // console.log(result);
       if(result?.url){
         router.replace("/dashboard");
       }
